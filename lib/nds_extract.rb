@@ -25,7 +25,11 @@ def gross_for_director(d)
 end
 
 def list_of_directors(source)
-  # Write this implementation
+  array = []
+  source.each do |direct|
+    array << direct[:name]
+  end
+  array
 end
 
 def total_gross(source)
@@ -38,6 +42,14 @@ def total_gross(source)
   # Visit each key (i.e. director name), look up the value in the hash
   # returned by directors_totals, and add it to a running total. When done,
   # return the total
+  direct_array = list_of_directors(source)
+  money_hash = directors_totals(source)
+  counter = 0
+  total = 0
+  while counter < money_hash.size do
+    name = direct_array[counter]
+    total += money_hash[name]
+    counter += 1
+  end
+  total
 end
-
-
