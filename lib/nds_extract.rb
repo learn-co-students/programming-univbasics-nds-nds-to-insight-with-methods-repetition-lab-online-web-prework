@@ -34,22 +34,27 @@ while row < source.length do
   directors = source[row][:name]
  directors_name << directors
   row += 1
-  # binding.pry 
 end
 
 p directors_name
 end
 
 def total_gross(source)
-  # Write this implementation
-  #
-  # Should use methods:
-  # 1. directors_totals: returns a Hash of { dir_name => gross }
-  # 2. list_of_directors: names provides an Array of directors names (use
-  #
-  # Visit each key (i.e. director name), look up the value in the hash
-  # returned by directors_totals, and add it to a running total. When done,
-  # return the total
+  row_index = 0 
+  grand_gross = 0  
+while row_index < source.length do 
+  movies = source[row_index][:movies]
+ 
+  element_index = 0 
+  while element_index < movies.length do 
+  grand_gross += movies[element_index][:worldwide_gross]
+    
+  element_index += 1 
 end
 
+row_index += 1 
+end
+ p grand_gross
+end
 
+ 
