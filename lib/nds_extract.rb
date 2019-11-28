@@ -25,10 +25,36 @@ def gross_for_director(d)
 end
 
 def list_of_directors(source)
-  # Write this implementation
+  grand_row_total = 0
+  column_index = 0
+  while column_index < nds[row_index].length do
+    grand_row_total += list_of_directors(nds, row_index, column_index)
+    column_index += 1
+    
+    list_of_directors
+ \-> list_of_directors
+    \-> list_of_directors
+  
+  end
+  grand_row_total
+ 
 end
 
 def total_gross(source)
+  def list_of_directors(nds)
+  grand_total = 0
+  row_index = 0
+  while row_index < nds.length do
+    grand_total += list_of_directors(nds, row_index)
+    row_index += 1
+  end
+  grand_total
+end
+ 
+p list_of_directors(vm) #=> 2,275,000
+  
+  
+  
   # Write this implementation
   #
   # Should use methods:
