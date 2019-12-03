@@ -54,8 +54,3 @@ def total_gross(source)
   end 
   total 
 end
-
-require 'pp'
-pp directors_database
-
-
