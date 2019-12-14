@@ -11,6 +11,7 @@ def directors_totals(source)
     director_index += 1
     # binding.pry
   end
+  # binding.pry
   result
   # returns updated HASH with dir => total_grosses
 end
@@ -50,6 +51,13 @@ def total_gross(source)
   # Visit each key (i.e. director name), look up the value in the hash
   # returned by directors_totals, and add it to a running total. When done,
   # return the total
+  d = 0
+  total_gross = 0
+  while d < list_of_directors(source).length do
+    total_gross += directors_totals(source)[list_of_directors(source)[d]]
+    d += 1
+  end
+  total_gross
 end
 
 
