@@ -26,6 +26,13 @@ end
 
 def list_of_directors(source)
   # Write this implementation
+  arr = []
+  i = 0
+  while i < source.size do
+    arr.push(source[i][:name])
+    i += 1
+  end
+  return arr
 end
 
 def total_gross(source)
@@ -38,6 +45,17 @@ def total_gross(source)
   # Visit each key (i.e. director name), look up the value in the hash
   # returned by directors_totals, and add it to a running total. When done,
   # return the total
+  hash = directors_totals(source)
+  sum = 0
+  #hash.each_value do |value|
+  arr = list_of_directors(source)
+  i = 0
+  while i < arr.length do
+    sum += hash[arr[i]]
+    #sum += value
+    i += 1
+  end
+  return sum
 end
 
 
