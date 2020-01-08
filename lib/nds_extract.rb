@@ -1,8 +1,17 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require_relative './directors_database'
+pp directors_database
+
 
 def directors_totals(source)
   result = {}
+  def director source 
+    director source = {
+   :lineone =>   ['infoone','infotwo','infortree'],
+   :linetwo => ['infoa','infob','infoc'],
+   :linetree => ['infox ,'infoy',infoz]
+ end
+    },
   director_index = 0
   while director_index < source.size do
     director = source[director_index]
@@ -25,7 +34,7 @@ def gross_for_director(d)
 end
 
 def list_of_directors(source)
-  # Write this implementation
+   list_of_directors = [ ]# Write this implementation
 end
 
 def total_gross(source)
