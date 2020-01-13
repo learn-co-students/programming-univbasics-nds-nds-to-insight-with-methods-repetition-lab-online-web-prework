@@ -4,7 +4,7 @@ require_relative './directors_database'
 def directors_totals(source)
   result = {}
   director_index = 0
-  while director_index < source.size do
+  while director_index < source.size
     director = source[director_index]
     result[director[:name]] = gross_for_director(director)
     director_index += 1
@@ -16,7 +16,7 @@ def gross_for_director(d)
   total = 0
   index = 0
 
-  while index < d[:movies].length do
+  while index < d[:movies].length
     total += d[:movies][index][:worldwide_gross]
     index += 1
   end
@@ -28,7 +28,7 @@ def list_of_directors(source)
   # Write this implementation
   arr = []
   i = 0
-  while i < source.size do
+  while i < source.size
     arr.push(source[i][:name])
     i += 1
   end
@@ -50,7 +50,7 @@ def total_gross(source)
   #hash.each_value do |value|
   arr = list_of_directors(source)
   i = 0
-  while i < arr.length do
+  while i < arr.length
     sum += hash[arr[i]]
     #sum += value
     i += 1
