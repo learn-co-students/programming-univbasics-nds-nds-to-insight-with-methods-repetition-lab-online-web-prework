@@ -1,5 +1,7 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require_relative './directors_database'
+require 'pp'
+
 
 def directors_totals(source)
   result = {}
@@ -25,10 +27,34 @@ def gross_for_director(d)
 end
 
 def list_of_directors(source)
+
+  result = []
+  directors_index = 0
+  while directors_index < source.size do
+    directors_name = source[directors_index][:name]
+    result.push(directors_name)
+    directors_index += 1
+  end
+  p result
+  return result
   # Write this implementation
 end
 
 def total_gross(source)
+
+  index = 0
+  total_gross = []
+  while index < source.length do
+    director = source[index][:name]
+    movie_index = 0
+    while movie_index < source[index][:movies].length do
+    total = source[index][:movies][movie_index][:worldwide_gross]
+    total_gross.push(total)
+    movie_index += 1
+  end
+    index += 1
+  end
+  return total_gross.sum
   # Write this implementation
   #
   # Should use methods:
@@ -39,5 +65,3 @@ def total_gross(source)
   # returned by directors_totals, and add it to a running total. When done,
   # return the total
 end
-
-
